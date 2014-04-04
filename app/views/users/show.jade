@@ -9,7 +9,7 @@ block content
         ul
          li #{user.name}
          li #{user.twitter.description}
-         li a(href="https://twitter.com/#{user.username}", target="_blank")@#{user.username}
+         li a(href="https://twitter.com/"+ user.username, target="_blank") @#{user.username}
          li Friends on twitter: #{user.twitter.friends_count}
          li Followers on Twitter #{user.twitter.followers_count}
     - if (user.provider == 'facebook')
