@@ -1,7 +1,7 @@
 {
   "name": "nwitter",
   "description": "A twitter demo app in nodejs",
-  "version": "0.0.1-42",
+  "version": "0.0.1-46",
   "repository": "https://github.com/vinitcool76/node-twitter",
   "private": false,
   "author": "Vinit Kumar <vinit.kumar@changer.nl> (http://vinitkumar.me)",
@@ -16,7 +16,7 @@
     "express": "latest",
     "jade": "latest",
     "mongoose": "latest",
-    "connect-mongo": "latest",
+    "connect-mongo": "~0.4.0",
     "connect-flash": "latest",
     "passport": "latest",
     "passport-local": "latest",
@@ -30,7 +30,11 @@
     "gzippo": "latest",
     "async": "latest",
     "view-helpers": "latest",
-    "forever": "latest"
+    "forever": "latest",
+    "express-session": "~1.0.2",
+    "cookie-parser": "~1.0.1",
+    "mongodb": "~1.4.0",
+    "connect": "~2.14.4"
   },
   "devDependencies": {
     "supertest": "latest",

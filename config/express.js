@@ -4,9 +4,13 @@
 
 
 var express = require('express'),
-    mongoStore = require('connect-mongo')(express),
+    connect = require('connect'),
+    mongoStore = require('connect-mongo')({session: session}),
     flash = require('connect-flash'),
-    helpers = require('view-helpers');
+    helpers = require('view-helpers'),
+    session = require('express-session'),
+    cookieParser = require('cookie-parser'),
+    mongodb = require('mongodb');
 
 
 module.exports = function (app, config, passport) {
@@ -33,12 +37,12 @@ module.exports = function (app, config, passport) {
   app.set('view engine', 'jade');
   app.configure(function () {
     app.use(helpers(config.app.name));
-    app.use(express.cookieParser());
+    app.use(cookieParser());
 
     app.use(express.bodyParser());
     app.use(express.methodOverride());
 
-        app.use(express.session({
+        app.use(session({
           secret: 'noobjs',
           store: new mongoStore({
             url: config.db,
